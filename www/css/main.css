@@ -1,0 +1,188 @@
+html {
+  font-size: 18px;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: #eeeeee;
+  font-family: "Consolas", "微软雅黑";
+  user-select: none;
+  max-width: 1000px;
+}
+.container .row {
+  padding-left: 6%;
+}
+.container .row > span {
+  background: #FFFFFF;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  height: 3rem;
+  line-height: 3rem;
+  border: 1px solid #111;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.container .row > span:last-child {
+  border-right-width: 2px;
+}
+.container .row > span:first-child {
+  border-left-width: 2px;
+}
+.container .row > span.col_g_right {
+  border-right-width: 1px;
+}
+.container .row.row_g_bottom > span {
+  border-bottom-width: 2px;
+}
+.container .row:first-child > span {
+  border-top-width: 2px;
+}
+.container .row:last-child > span {
+  border-bottom-width: 2px;
+}
+.container .row .empty {
+  color: #FFFFFF;
+  background: #FFFFFF;
+}
+.container .row .fixed {
+  background: #f5f5f5;
+}
+.container .row .mark1 {
+  background: lightblue;
+}
+.container .row .mark1.empty {
+  color: lightblue;
+}
+.container .row .mark2 {
+  background: lightgreen;
+}
+.container .row .mark2.empty {
+  color: lightblue;
+}
+.container .row .error {
+  background: lightpink;
+}
+.container .row .error.empty {
+  color: lightpink;
+}
+.title {
+  padding: 1rem 5%;
+  background: steelblue;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.2rem 0.3rem #303030;
+}
+.title h1 {
+  margin: 0;
+  padding: 0;
+}
+.hidden {
+  display: none;
+}
+.popup-num {
+  position: absolute;
+}
+.popup-num .row {
+  padding-left: 6%;
+}
+.popup-num .row > span {
+  background: #FFFFFF;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 10%;
+  height: 3rem;
+  line-height: 3rem;
+  border: 1px solid #111;
+  border-right-width: 0;
+  border-bottom-width: 0;
+}
+.popup-num .row > span:last-child {
+  border-right-width: 2px;
+}
+.popup-num .row > span:first-child {
+  border-left-width: 2px;
+}
+.popup-num .row > span.col_g_right {
+  border-right-width: 1px;
+}
+.popup-num .row.row_g_bottom > span {
+  border-bottom-width: 2px;
+}
+.popup-num .row:first-child > span {
+  border-top-width: 2px;
+}
+.popup-num .row:last-child > span {
+  border-bottom-width: 2px;
+}
+.popup-num .row .empty {
+  color: #FFFFFF;
+  background: #FFFFFF;
+}
+.popup-num .row .fixed {
+  background: #f5f5f5;
+}
+.popup-num .row .mark1 {
+  background: lightblue;
+}
+.popup-num .row .mark1.empty {
+  color: lightblue;
+}
+.popup-num .row .mark2 {
+  background: lightgreen;
+}
+.popup-num .row .mark2.empty {
+  color: lightblue;
+}
+.popup-num .row .error {
+  background: lightpink;
+}
+.popup-num .row .error.empty {
+  color: lightpink;
+}
+.popup-num .row {
+  padding: 0;
+}
+.popup-num .row > span {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+}
+#popupNumbers {
+  width: 200px;
+  height: 200px;
+  margin-right: 50px;
+}
+.dashboard {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: steelblue;
+  box-sizing: border-box;
+  box-shadow: 0 0.1rem 0.2rem #303030;
+  height: 5rem;
+}
+.dashboard .buttons {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.dashboard .buttons button {
+  float: left;
+  width: 25%;
+  height: 5rem;
+  font-size: 1.3rem;
+  color: white;
+  border: 1px solid #cccccc;
+  background: transparent;
+  border-right-width: 0;
+}
+.dashboard .buttons button:last-child {
+  border-right-width: 1px;
+}
