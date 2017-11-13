@@ -7,7 +7,7 @@ module.exports = {
         index:"./js/index"
     },
 
-    // output的蚕食是个对象，用于定义构建后的文件的输出，其中包括path和filename
+    // output是个对象，用于定义构建后的文件的输出，其中包括path和filename
     // 当在entry中定义购进多个文件的时候，filename可以更改为[name].js用于定义不同文件构建后的名字
     output:{
         filename:"[name].js"

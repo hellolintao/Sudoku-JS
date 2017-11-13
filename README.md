@@ -1,6 +1,5 @@
 # sudoku
 ## 这个是使用ES6 jQuery Less完成的数独的小游戏。
-### 开发环境的配置
 ### 文件说明
 - src是开发目录
     - js目录
@@ -22,3 +21,17 @@
     - css目录 *生成的CSS文件*
     - js目录 *编译成功的js*
     - index.html  *网页的结构*
+### 开发环境的配置
+
+- 打包工具使用的是webpack
+- 编译工具使用的是babel
+- 构建工具使用的是gulp
+- 另外包管理是器使用的是yarn 很好用
+
+####构建过程
+- 首先要安装node.js yarn 
+- 然后安装包 webpack bable gulp 
+- 继续配置文件 webpack.config.js gulpfile.js 文件配置正确，工具才可以正常使用，除了很多莫名的错误的时候，很可能是工具配置错误造成的，不同版本的工具构建文件的写法可能有一丝丝不同。
+*针对以上的补充*
+- 安装babel的时候，babel-core babel-loader babel-preset-es2015都是必须的
+- gulp是构建工具，gulp-less是构建css的工具 同时还要引入gulp-util包

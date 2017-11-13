@@ -1,7 +1,7 @@
 // 导入gulp
 const gulp = require("gulp");
 
-// 转译js，引入webpack
+// 转译js，引入webpack 
 gulp.task("webpack",() => {
     // 引用webpack的模块，然后指定源文件和输出文件
     // config是配置
