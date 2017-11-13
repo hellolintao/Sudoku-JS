@@ -28,10 +28,11 @@
 - 构建工具使用的是gulp
 - 另外包管理是器使用的是yarn 很好用
 
-####构建过程
+#### 构建过程
 - 首先要安装node.js yarn 
 - 然后安装包 webpack bable gulp 
 - 继续配置文件 webpack.config.js gulpfile.js 文件配置正确，工具才可以正常使用，除了很多莫名的错误的时候，很可能是工具配置错误造成的，不同版本的工具构建文件的写法可能有一丝丝不同。
+
 *针对以上的补充*
 - 安装babel的时候，babel-core babel-loader babel-preset-es2015都是必须的
 - gulp是构建工具，gulp-less是构建css的工具 同时还要引入gulp-util包
