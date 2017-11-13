@@ -1,5 +1,4 @@
 // 处理弹出的操作面板
-
 module.exports=class PopupNumbers{
     constructor($panel){
         this._$panel=$panel.hide().removeClass("hidden");
@@ -23,17 +22,18 @@ module.exports=class PopupNumbers{
                         .addClass("mark2");
                 }
             }else if($span.hasClass("empty")){
+
                 // 取消数字和mark
                 $cell.removeClass("mark1").removeClass("mark2");
                 $cell.text(0).addClass("empty");
             }else{
                 $cell.removeClass("empty").text($span.text());
-                // 1-9  填写数字
             }
             this.hide();
             
         });
     }
+
     popup($cell){
         this._targetcell=$cell;
         const {left,top}=$cell.position();
@@ -52,8 +52,8 @@ module.exports=class PopupNumbers{
                 top:`${top-60}px`
             }).show();
         }
-        
     }
+
     hide(){
         this._$panel.hide();
     }
