@@ -22,7 +22,6 @@ module.exports=class PopupNumbers{
                         .addClass("mark2");
                 }
             }else if($span.hasClass("empty")){
-
                 // 取消数字和mark
                 $cell.removeClass("mark1").removeClass("mark2");
                 $cell.text(0).addClass("empty");

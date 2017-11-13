@@ -6,6 +6,7 @@ module.exports=class Generator{
             console.warn("try again");
         }
     }
+
     internalgenerate(){
         this.martrix=Toolkit.makeMatrix();
         this.orders=Toolkit.makeMatrix()
@@ -18,14 +19,15 @@ module.exports=class Generator{
         }
         return true;
     }
+
     fillNumber(n){
         return this.fillRow(n,0);
     }
+
     fillRow(n,rowIndex){
         if(rowIndex>8){
             return true;
         }
-
         const row=this.martrix[rowIndex];
         const orders=this.orders[rowIndex];
         // 随机选择列
@@ -51,6 +53,3 @@ module.exports=class Generator{
         // 当前行填写n成功，递归当前函数，fillrow来在下一行中填写n 
     }
 };
-// const generator=new Generator();
-// generator.generate();
-// console.log(generator.martrix);

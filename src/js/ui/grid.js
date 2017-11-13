@@ -1,4 +1,3 @@
-// 这个文件的功能是生成
 // 生成九宫格
 const Toolkit = require("../core/toolkit");
 const Generator=require("../core/generator");
@@ -17,12 +16,9 @@ class Grid{
         const sudoku=new Sudoku();
         sudoku.make();
         const matrix=sudoku.puzzlematirx;
-        
         // // 得到一个二维随机数组
         const rowGroupClasses=["row_g_top","row_g_middle","row_g_bottom"];
         const colGroupClasses=["col_g_left","col_g_center","col_g_right"];
-
-
         // 声明一个变量，第一次使用map遍历数组，
         // 第二次使用map遍历第二维的数组
         // 数组中的每一项都返回了<span>cellValue</span>
@@ -32,7 +28,6 @@ class Grid{
                                 .addClass(cellValue?"fixed":"empty")
                                 .text(cellValue);
                         }));
-
         // 开始生成divArray 遍历刚才的返回的一堆￥cells  都是每一个小格子
         // 遍历的作用把每一行的小格子放到一个div之中
         // 这个时候 divArray还是一个二维数组，进行第一个map的时候，只是对第一维进行了遍历
@@ -47,6 +42,7 @@ class Grid{
                  });
         this._$container.append($divArray);
     }
+
     // 布局操作 使每一个格子都是正方形
     layout(){
         const width=$("span:first",this._$container).width();
@@ -107,11 +103,8 @@ class Grid{
             }else{
                 popupNumber.popup($cell);
                 
-            }
-            
+            } 
         });
     }
-
 }
 module.exports=Grid;
-// 最后的是所有都成功的时候也要移除error

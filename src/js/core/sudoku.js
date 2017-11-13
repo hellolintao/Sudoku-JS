@@ -4,15 +4,14 @@
 const Generator=require("./generator");
 
 module.exports=class Sudoku{
+    //生成解决方案
     constructor(){
-        // 生成解决方案
         const generator=new Generator();
         generator.generate();
         this.solutionMatrix=generator.martrix;
     }
+    // 生成迷盘
     make(level=5){
-        // 生成迷盘
-        // const shouldRid=Math.random()*9<level;
         this.puzzlematirx=this.solutionMatrix.map(row=>{
             return row.map(cell=>Math.random()*9<level?0:cell);
         });

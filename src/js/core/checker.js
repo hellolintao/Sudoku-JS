@@ -24,6 +24,7 @@ function checkArray(array){
 }
 
 const Toolkit=require("./toolkit");
+
 // 输入“matrix  用户完成的数据 9x9
 // 处理 对matrix行 列 宫进行检查  并且填写marks
 // 输出“检查是否成功、marks
@@ -33,13 +34,16 @@ class Checker{
         this._martrixMarks=Toolkit.makeMatrix(true);
         console.log(this._martrixMarks);
     }
+
     get matrixMarks(){
        
         return this._martrixMarks;
     }
+
     get isSucess(){
         return this._sucess;
     }
+
     check(){
         this.checkRows();
         this.checkCols();
@@ -101,17 +105,8 @@ class Checker{
 }
 
 module.exports=Checker;
-
 const Generator=require("./generator");
 const gen=new Generator();
 gen.generate();
 const matrix=gen.martrix;
 const checker=new Checker(matrix);
-console.log("check result",checker.check());
-console.log(checker.matrixMarks);
-
-// matrix[1][1]=0;
-// matrix[2][3]=matrix[2][5]=5;
-// const checker2=new Checker(matrix);
-// console.log("check result",checker2.check());
-// console.log(checker2.matrixMarks);

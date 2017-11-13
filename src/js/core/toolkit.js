@@ -1,15 +1,17 @@
 const matrixToolkit={
-     makeRow(v=0){
+    makeRow(v=0){
         const array=new Array(9);
         array.fill(v);
         return array;
     },
-     makeMatrix(v = 0){
+
+    makeMatrix(v = 0){
         return Array.from({length:9},()=>this.makeRow(v));
     },
+
     // 实现洗牌算法
     // Fisher-Yates
-     shuffle(array){
+    shuffle(array){
         const endIndex=array.length-2;
         for(let i=0;i<endIndex;i++){
             const j=i+Math.floor(Math.random()*(array.length-i));
@@ -17,6 +19,7 @@ const matrixToolkit={
         }
         return array;
     },
+
     // 检查指定的位置是否可以填写数字n
     checkFillable(martrix,n,rowIndex,colIndex){
         const row=martrix[rowIndex];
@@ -30,6 +33,7 @@ const matrixToolkit={
         }
         return true;
     },
+
     getBoxCells(matrix,boxIndex){
         const startRowIndex=Math.floor(boxIndex/3)*3;
         const startColIndex=boxIndex%3*3;
@@ -41,12 +45,14 @@ const matrixToolkit={
         }
         return result;
     },
+
     converToboxIndex(rowIndex,colIndex){
         return {
             boxIndex:Math.floor(rowIndex/3)*3+Math.floor(colIndex/3),
             cellIndex:rowIndex%3*3+colIndex%3
         };
     },
+
     converFromBoxIndex(boxIndex,cellIndex){
         return {
             rowIndex:Math.floor(boxIndex/3)*3+Math.floor(cellIndex/3),
@@ -70,12 +76,14 @@ const boxToolkit={
         }
         return result;
     },
+
     converToboxIndex(rowIndex,colIndex){
         return {
             boxIndex:Math.floor(rowIndex/3)*3+Math.floor(colIndex/3),
             cellIndex:rowIndex%3*3+colIndex%3
         };
     },
+    
     converFromBoxIndex(boxIndex,cellIndex){
         return {
             rowIndex:Math.floor(boxIndex/3)*3+Math.floor(cellIndex/3),
@@ -92,7 +100,6 @@ module.exports=class Toolkit{
         return this.matrixToolkit;
     }
     // 宫坐标系相关的工具
-    
     static get box(){
         return this.boxToolkit;
     }
