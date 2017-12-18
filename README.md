@@ -1,5 +1,5 @@
-# sudoku
-## 这个是使用ES6 jQuery Less完成的数独的小游戏。
+### 这个是使用ES6 jQuery Less完成的数独的小游戏。
+    演示地址：https://hellolintao.github.io/Sudoku-JS/
 ### 怎样使用
 - 首先进入src安装依赖，npm install
 - 然后进行编译，命令式gulp
