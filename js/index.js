@@ -92,6 +92,7 @@ var matrixToolkit = {
         });
     },
 
+
     // 实现洗牌算法
     // Fisher-Yates
     shuffle: function shuffle(array) {
@@ -104,6 +105,7 @@ var matrixToolkit = {
         }
         return array;
     },
+
 
     // 检查指定的位置是否可以填写数字n
     checkFillable: function checkFillable(martrix, n, rowIndex, colIndex) {
@@ -255,7 +257,6 @@ module.exports = function () {
             if (rowIndex > 8) {
                 return true;
             }
-
             var row = this.martrix[rowIndex];
             var orders = this.orders[rowIndex];
             // 随机选择列
@@ -284,9 +285,6 @@ module.exports = function () {
 
     return Generator;
 }();
-// const generator=new Generator();
-// generator.generate();
-// console.log(generator.martrix);
 
 /***/ }),
 /* 2 */
@@ -295,6 +293,7 @@ module.exports = function () {
 "use strict";
 
 
+// 引入需要的包
 var PopupNumbers = __webpack_require__(3);
 var Grid = __webpack_require__(4);
 var grid = new Grid($("#container"));
@@ -308,19 +307,18 @@ $("#check").on("click", function (e) {
     alert("Sucess!");
   }
 });
+
 $("#reset").on("click", function (e) {
   grid.reset();
 });
+
 $("#clear").on("click", function (e) {
   grid.clear();
 });
 
 $("#rebuild").on("click", function (e) {
   console.log("!!!!");
-  //fun();
   location.reload();
-  // grid._$container.empty();
-  // grid=new Grid($("#container"));
 });
 
 /***/ }),
@@ -335,7 +333,6 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // 处理弹出的操作面板
-
 module.exports = function () {
     function PopupNumbers($panel) {
         var _this = this;
@@ -366,7 +363,6 @@ module.exports = function () {
                 $cell.text(0).addClass("empty");
             } else {
                 $cell.removeClass("empty").text($span.text());
-                // 1-9  填写数字
             }
             _this.hide();
         });
@@ -432,32 +428,18 @@ var Grid = function () {
         this.layout();
     }
 
-    _createClass(Grid, [{
-        key: "rebuild",
-        value: function rebuild() {
-            // console.log(this._$container);
-            // var a=this._$container;
+    // 生成一个九宫格
 
-            // console.log(this._$container.children());
-            // this._$container.empty();
-            // console.log(this._$container.children());
-            // this.build();
-            this.layout();
-        }
-    }, {
+
+    _createClass(Grid, [{
         key: "build",
         value: function build() {
             var sudoku = new Sudoku();
             sudoku.make();
             var matrix = sudoku.puzzlematirx;
-            // const generator=new Generator();
-            // generator.generate();
-
             // // 得到一个二维随机数组
-            // const matrix=generator.martrix;
             var rowGroupClasses = ["row_g_top", "row_g_middle", "row_g_bottom"];
             var colGroupClasses = ["col_g_left", "col_g_center", "col_g_right"];
-
             // 声明一个变量，第一次使用map遍历数组，
             // 第二次使用map遍历第二维的数组
             // 数组中的每一项都返回了<span>cellValue</span>
@@ -476,6 +458,9 @@ var Grid = function () {
             });
             this._$container.append($divArray);
         }
+
+        // 布局操作 使每一个格子都是正方形
+
     }, {
         key: "layout",
         value: function layout() {
@@ -485,6 +470,7 @@ var Grid = function () {
                 "font-size": width < 32 ? "" + width / 2 : ""
             });
         }
+
         // 检查用户游戏的结果，成功的话进行提示，失败的话进行标记
 
     }, {
@@ -516,6 +502,7 @@ var Grid = function () {
                 });
             });
         }
+
         // 重置迷盘到初始的状态
 
     }, {
@@ -523,6 +510,7 @@ var Grid = function () {
         value: function reset() {
             this._$container.find("span:not(.fixed)").removeClass("error mark1 mark2").addClass("empty").text(0);
         }
+
         // 主要是为了清除错误的标记
 
     }, {
@@ -530,6 +518,9 @@ var Grid = function () {
         value: function clear() {
             this._$container.find("span.error").removeClass("error");
         }
+
+        // 这个是对每个格子点击时候的监听 
+
     }, {
         key: "bindPopup",
         value: function bindPopup(popupNumber) {
@@ -549,7 +540,6 @@ var Grid = function () {
 }();
 
 module.exports = Grid;
-// 最后的是所有都成功的时候也要移除error
 
 /***/ }),
 /* 5 */
@@ -568,22 +558,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Generator = __webpack_require__(1);
 
 module.exports = function () {
+    //生成解决方案
     function Sudoku() {
         _classCallCheck(this, Sudoku);
 
-        // 生成解决方案
         var generator = new Generator();
         generator.generate();
         this.solutionMatrix = generator.martrix;
     }
+    // 生成迷盘
+
 
     _createClass(Sudoku, [{
         key: "make",
         value: function make() {
             var level = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 5;
 
-            // 生成迷盘
-            // const shouldRid=Math.random()*9<level;
             this.puzzlematirx = this.solutionMatrix.map(function (row) {
                 return row.map(function (cell) {
                     return Math.random() * 9 < level ? 0 : cell;
@@ -632,6 +622,7 @@ function checkArray(array) {
 }
 
 var Toolkit = __webpack_require__(0);
+
 // 输入“matrix  用户完成的数据 9x9
 // 处理 对matrix行 列 宫进行检查  并且填写marks
 // 输出“检查是否成功、marks
@@ -730,20 +721,11 @@ var Checker = function () {
 }();
 
 module.exports = Checker;
-
 var Generator = __webpack_require__(1);
 var gen = new Generator();
 gen.generate();
 var matrix = gen.martrix;
 var checker = new Checker(matrix);
-console.log("check result", checker.check());
-console.log(checker.matrixMarks);
-
-// matrix[1][1]=0;
-// matrix[2][3]=matrix[2][5]=5;
-// const checker2=new Checker(matrix);
-// console.log("check result",checker2.check());
-// console.log(checker2.matrixMarks);
 
 /***/ })
 /******/ ]);
