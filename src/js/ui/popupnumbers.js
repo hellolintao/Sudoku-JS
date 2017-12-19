@@ -1,10 +1,10 @@
 // 处理弹出的操作面板
-module.exports=class PopupNumbers{
+module.exports = class PopupNumbers{
     constructor($panel){
-        this._$panel=$panel.hide().removeClass("hidden");
-        this._$panel.on("click","span",e=>{
-            const $cell=this._targetcell;
-            const $span=$(e.target);
+        this._$panel = $panel.hide().removeClass("hidden");
+        this._$panel.on("click","span",e => {
+            const $cell = this._targetcell;
+            const $span = $(e.target);
             
             // mark  回填样式
             if($span.hasClass("mark1")){
@@ -34,21 +34,21 @@ module.exports=class PopupNumbers{
     }
 
     popup($cell){
-        this._targetcell=$cell;
-        const {left,top}=$cell.position();
-        let temp=$(window).width();
-        let temp2=temp-temp/5.5;
-        if(left>temp2){
+        this._targetcell = $cell;
+        const {left,top} = $cell.position();
+        let temp = $(window).width();
+        let temp2 = temp - temp / 5.5;
+        if(left > temp2){
             this._$panel
             .css({
-                left:`${temp-temp/5.5-120}px`,
-                top:`${top-60}px`
+                left:`${temp - temp / 5.5 - 120}px`,
+                top:`${top - 60}px`
             }).show();
         }else{
             this._$panel
             .css({
-                left:`${left-60}px`,
-                top:`${top-60}px`
+                left:`${left - 60}px`,
+                top:`${top - 60}px`
             }).show();
         }
     }
